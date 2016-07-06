@@ -1,0 +1,21 @@
+<h1>Edit Profile</h1>
+
+		<form ng-submit='editOneUser(editedUser)'>
+			<div class="form-group">
+
+				<label>First Name</label>
+				<input class="form-control" type="text" ng-model='editedUser.firstName'>
+
+				<label>Last Name</label>
+				<input class="form-control" type="text" ng-model='editedUser.lastName'>
+
+				<label>Bio</label>
+				<input class="form-control" type="textarea" ng-model='editedUser.bio'>
+
+				<label>Picture</label>
+				<input class="form-control" type="text" placeholder="URL of photo" ng-model='editedUser.picture'>
+
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+

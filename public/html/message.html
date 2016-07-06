@@ -1,0 +1,46 @@
+<h1>CRUD</h1>
+
+
+<div class="row">
+	<div class="col-sm-6">
+
+		<form ng-submit='addOneMessage(newMessage)'>
+			<div class="form-group">
+				<label>Message Name</label>
+				<input class="form-control" type="text" placeholder="Name of Message" ng-model='newMessage.name' required>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+
+	</div>
+</div>
+
+
+<div class="table-container">
+	<table class="table">
+		<thead>
+			<th>Message Name</th>
+		</thead>
+		<colgroup>
+			<col style="width:80%">
+			<col style="width:20%">
+		</colgroup>  
+
+		<tr ng-repeat="message in messageArray track by $index">
+			<td>
+				<a href="#" editable-text="message.name" onbeforesave="editOneMessage(message)" e-required>{{ message.name ||'empty' }}</a>
+			</td>
+			<td>
+				<button class="delete-button btn btn-danger " ng-click="removeOneMessage(message)">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+				</button>
+			</td>
+		</tr>
+
+
+	</tr>
+
+</table>
+
+</div>
+

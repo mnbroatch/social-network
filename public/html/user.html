@@ -1,0 +1,49 @@
+
+<div class="row">
+
+	<div class="col-sm-3 info-box">
+
+		<div class="row">
+			<div class="col-xs-12 profile-picture">
+				<img ng-src="{{currentUser.picture}}" />
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 user-info">
+				Real Name: {{currentUser.firstName || "Unknown"}} {{currentUser.lastName || "Unknown"}}
+				About Me: {{currentUser.bio || "This user has not written a bio :("}} 
+			</div>
+		</div>
+
+	</div>
+
+	<div class="col-sm-9 wall">
+
+		<div class="row wall-input">
+			<div class="col-xs-12">
+				<textarea ng-model="newMessage.text" placeholder="Got something to say?">
+			</div>
+		</div>
+
+		<div ng-repeat="message in user.messages track by $index">
+			<div class="panel panel-primary">
+				<div class="panel-body">
+					{{message.text}}
+				</div>
+				<div class="panel-footer">
+					{{message.author}}
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+
+</div>
+

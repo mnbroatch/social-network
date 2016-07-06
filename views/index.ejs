@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>CRUD</title>
+		<meta charset="UTF-8">
+
+		<script src="/bower_components/jquery/dist/jquery.js"></script>
+		<script src="/bower_components/angular/angular.js"></script>
+		<link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+		<script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>	<script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+		<script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script> 
+		<script src="/bower_components/bootstrap/js/button.js"></script>
+		<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" media="all">
+		<script src="/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+		<script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+		<script src="bower_components/satellizer/satellizer.min.js"></script>
+
+		<script src="/js/module.js"></script>
+		<script src="/js/mainController.js"></script>
+		<script src="/js/userController.js"></script>
+		<script src="/js/messageController.js"></script>
+		<script src="/js/loginController.js"></script>
+		<script src="/js/userService.js"></script>
+		<script src="/js/messageService.js"></script>
+		<script src="/js/authService.js"></script>
+		<script src="/js/live.js"></script>
+
+		<link rel="stylesheet" href="/css/style.css" media="all"> 
+	</head>
+
+	<body ng-app="appName" ng-controller="mainController">
+		<div class="container">
+
+
+			<div class="btn-group navigation">
+				<label class="btn btn-primary" ui-sref="user" ng-model="navButton" uib-btn-radio="'user'">User</label>
+			</div>
+
+			<div class="btn-group navigation">
+				<label class="btn btn-primary" ui-sref="edit" ng-model="navButton" uib-btn-radio="'edit'">Edit</label>
+			</div>
+
+			<div ng-if="!currentUser" class="btn-group navigation">
+				<label class="btn btn-primary" ui-sref="login" ng-model="navButton" uib-btn-radio="'login'">Login</label>
+			</div>
+
+			<div ng-if="!currentUser" class="btn-group navigation">
+				<label class="btn btn-primary" ui-sref="register" ng-model="navButton" uib-btn-radio="'register'">Register</label>
+			</div>
+
+			<div ng-if="currentUser" class="btn-group navigation">
+				<label class="btn btn-primary" ng-click="logout()" ng-model="navButton">Log Out</label>
+			</div>
+
+
+		isAuthenticated:	{{isAuthenticated()}}
+
+			<ui-view></ui-view>
+
+
+		</div>
+	</body>
+</html>
+

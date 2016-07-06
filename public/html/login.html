@@ -1,0 +1,12 @@
+<form ng-submit="submit()">
+	<input type="text" ng-model="user.username" placeholder="Username" required>
+	<input type="password" ng-model="user.password" placeholder="Password" required>
+	<input ng-if='currentState === "register"' type="password" ng-model="user.password2" placeholder="Please Repeat Password" required>
+	<button type="submit">
+		{{currentState}}
+	</button>
+
+	<button class="btn btn-primary" ng-click="authenticate('facebook')">Login With Facebook</button>
+
+</form>
+
